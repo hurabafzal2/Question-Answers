@@ -1,0 +1,29 @@
+<div class="container p-3">
+    <h1 class="text-center">Select Questions<h1>
+    <div class="d-flex justify-content-between mb-3">
+        <h4>Select technology</h4>
+    </div>
+    <%= form_tag question_print_page_path , :method => :get do |f| %>
+    <div  id="add_new_fields">
+        <div class="form-group d-flex gap-3 mb-3">     
+            <%= select_tag 'questions[][tech_id]', options_for_select($technologies.collect{ |u| [u.name, u.id] }), class: "form-select p-3", :include_blank => false, :prompt => 'Select Technology'%>
+             <%= select_tag 'questions[][range]', options_for_select([1,2,3,4,5]), class: "form-select p-3", :include_blank => false, :prompt => 'How many questions?'%>
+        </div>
+    </div>
+        <div class="d-flex justify-content-end align-items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+                <path id="Icon_ionic-ios-add-circle" data-name="Icon ionic-ios-add-circle" d="M17.375,3.375a14,14,0,1,0,14,14A14,14,0,0,0,17.375,3.375Zm6.091,15.077H18.452v5.014a1.077,1.077,0,0,1-2.154,0V18.452H11.284a1.077,1.077,0,1,1,0-2.154H16.3V11.284a1.077,1.077,0,1,1,2.154,0V16.3h5.014a1.077,1.077,0,1,1,0,2.154Z" transform="translate(-3.375 -3.375)" fill="#3a3ffe"/>
+              </svg>
+              <%= link_to "Add More Technology", add_new_fields_path, remote: true, class: "link-primary text-decoration-none fs-5"%>
+        </div>
+        <div class="">
+            <h4>Select marks range</h4>
+            <div class="d-flex gap-3 mb-3">
+                <%= text_field_tag 'marks_range_from', value=2, placeholder: 'From', class: "form-select p-3"%>
+                  <%= text_field_tag 'marks_range_to', value=5, placeholder: 'To', class: "form-select p-3"%>
+            </div>
+             <%= submit_tag 'Filter', class: "btn btn-success py-2 px-4 float-end"%>
+        </div>
+       
+        <%end%>
+</div>

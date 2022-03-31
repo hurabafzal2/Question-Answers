@@ -1,0 +1,5 @@
+$('#add_new_fields').append("<%= escape_javascript render('attr_form') %>");
+
+ $('form').on('click', '#Icon_feather-minus-circle', function(event){ console.log('remove'); $(this).prev('input[type=hidden]').val('1'); $(this).closest('#add_new_fields').hide(); return event.preventDefault();
+
+});

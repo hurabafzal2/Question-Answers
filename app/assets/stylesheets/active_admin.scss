@@ -1,0 +1,67 @@
+// Sass variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+
+// Active Admin's got SASS!
+// @import "active_admin/mixins";
+// @import "active_admin/base";
+
+@import "arctic_admin/base";
+
+// Overriding any non-variable Sass must be done after the fact.
+// For example, to change the default status-tag color:
+//
+//   .status_tag { background: #6090DB; }
+// @import "~arctic_admin/src/scss/main";
+
+.footer p:nth-child(1){
+    text-align: center;
+}
+.quill_editor {
+    width: 58%;
+    margin-left: 17%;
+}
+body.logged_in.new .input .label, body.logged_in.edit .input .label, body.logged_in.create .input .label, body.logged_in.update .input .label{
+    margin: unset;
+}
+#question_technology_id_input{
+    margin-left: 110px
+}
+#question_marks_input{
+    margin-left: 110px;
+}
+body.logged_in.new .input.boolean, body.logged_in.edit .input.boolean, body.logged_in.create .input.boolean, body.logged_in.update .input.boolean{
+    margin-left: 31%;
+}
+body.logged_in.new .actions, body.logged_in.edit .actions, body.logged_in.create .actions, body.logged_in.update .actions{
+    margin-left: 31%;
+    padding: 0;
+}
+#question_question{
+    margin-left: 24%;
+}
+// .field_with_errors{
+//     position: relative;
+//     top: 32px;
+//     left: 24%;
+// }
+.field_with_errors .label-margin {
+    position: relative;
+    top: 32px;
+    left: 24%;
+}
+body.active_admin [data-aa-quill-editor]{
+    margin-left: 24%
+}
+label.label-margin {
+    position: relative;
+    top: 32px;
+    left: 24%;
+}
+@import 'activeadmin/quill_editor/quill.snow';
+@import 'activeadmin/quill_editor_input';

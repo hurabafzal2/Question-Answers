@@ -1,0 +1,22 @@
+ @import "bootstrap";
+ .table > :not(caption) > * > *{
+     padding: 0;
+ }
+ p{
+     margin: 0;
+ }
+ .table-bordered tr td{
+    border-bottom: 1px solid #ccc;
+ }
+ .spacing span{
+     margin-left: 20px;
+ }
+.form-select{
+    border-radius: 10px;
+}
+.link-primary{
+    color: #3A3FFE;
+}
+.text-end{
+    text-align: end;
+}

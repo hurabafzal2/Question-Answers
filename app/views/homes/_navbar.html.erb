@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+ <span class="nav-item float-end m-5 mt-2">
+    <%= link_to 'logout', destroy_user_session_path%>
+  </span>
+<% else %>
+  <span class="nav-item float-end m-5 mt-2">
+    <%= link_to 'Sign in', new_user_session_path, class: "nav-link"%>
+  </span>
+<% end %>
